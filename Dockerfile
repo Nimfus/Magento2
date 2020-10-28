@@ -1,4 +1,4 @@
-FROM php:7.3-apache
+FROM php:7.4-apache
 
 MAINTAINER Viacheslav Skydanchuk <nimfus@gmail.com>
 
@@ -18,6 +18,7 @@ RUN apt-get update \
 	libjpeg62-turbo-dev \
 	libmcrypt-dev \
 	libedit-dev \
+	libonig-dev \
 	libedit2 \
 	libxslt1-dev \
 	libzip-dev \
@@ -71,7 +72,6 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
 # Install Composer
 
 RUN	curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
-RUN composer global require hirak/prestissimo
 
 # Install Code Sniffer
 
